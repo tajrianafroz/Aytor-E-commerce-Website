@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pages</title>
+    <!-- ==================== GOOGLE FONT'S START ==================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- ==================== GOOGLE FONT'S END ==================== -->
+
+    <!-- =============== SLICK SLIDER START =============== -->
+    <link rel="stylesheet" href="./Assets/CSS/slick.min.css">
+    <!-- =============== SLICK SLIDER END =============== -->
+
+    <!-- =============== FONT AWESOME START =============== -->
+    <link rel="stylesheet" href="./Assets/CSS/font-awesome.all.min.css">
+    <!-- =============== FONT AWESOME END =============== -->
+
+    <!-- =============== BOOTSTRAP START =============== -->
+    <link rel="stylesheet" href="./Assets/CSS/bootstrap.min.css">
+    <!-- =============== BOOTSTRAP END =============== -->
+
+    <!-- =============== CUSTOM STYLE START =============== -->
+    <link rel="stylesheet" href="./Assets/CSS/page-style.css">
+    <!-- =============== CUSTOM STYLE END =============== -->
+
+    <!-- =============== RESPONSIVE CSS START =============== -->
+    <link rel="stylesheet" href="./Assets/CSS/responsive.css">
+    <!-- =============== RESPONSIVE CSS END =============== -->
+</head>
+<body>
+
+    <!-- ==================== NAV START ==================== -->
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="nav_logo" href="#">
+            <img src="./Assets/Images/Common/Nav_Logo.png" alt="">
+          </a>
+          <span class="navbar-toggler" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <span class=""><i class="fa-solid fa-bars"></i></span>
+          </span>
+          <div class="collapse navbar-collapse nav_portion" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav_menu" href="./Home.html">Home</a>
+              </li>
+              <li class="nav-item menu">
+                <a class="nav_menu" href="#">Shop<span><i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Blog One</a></li>
+                        <li><a href="#">Blog Two</a></li>
+                        <li><a href="#">Blog Three</a></li>
+                    </ul>
+              </li>
+              <li class="nav-item menu">
+                <a class="nav_menu" href="#">Pages<span><i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Blog One</a></li>
+                        <li><a href="#">Blog Two</a></li>
+                        <li><a href="#">Blog Three</a></li>
+                    </ul>
+              </li>
+              <li class="nav-item menu">
+                <a class="nav_menu" href="#">Features<span><i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Blog One</a></li>
+                        <li><a href="#">Blog Two</a></li>
+                        <li><a href="#">Blog Three</a></li>
+                    </ul>
+              </li>
+              <li class="nav-item menu">
+                <a class="nav_menu" href="./Blog.html">Blogs<span><i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="./Blog.html">Blog</a></li>
+                        <li><a href="#">Blog - Classic</a></li>
+                        <li><a href="#">Blog - Classic With Sidebar</a></li>
+                        <li><a href="#">Blog - Details</a></li>
+                    </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav_menu" href="./Contact.html">Contact</a>
+              </li>
+            </ul>
+            <ul class="icons">
+                <li class="search_icon"><a class="nav_icon" href="#">
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                </a></li>
+                <li><a class="nav_icon" href="#">
+                    <span><i class="fa-regular fa-user"></i></span>
+                </a></li>
+                <li><a class="nav_icon" href="./Wishlist.html">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                </a></li>
+                <li><a class="nav_icon bag" href="#">
+                    <span><i class="fa-solid fa-bag-shopping"></i></span>
+                    <span class="zero">0</span>
+                </a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+
+      <!-- ==================== OFF-CANVAS START ==================== -->
+      
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <img src="./Assets/Images/Common/Nav_Logo.png" alt="">
+            <span class="btn-close close_canvas" data-bs-dismiss="offcanvas" aria-label="Close"></span>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="off_canvas_menu">
+            <li>
+                <span class="beside"><i class="fa-solid fa-house"></i></span>
+                <a href="./Home.html">Home</a>
+            </li>
+            <li>
+                <span class="beside"><i class="fa-solid fa-shop"></i></span>
+                <a href="#">Shop</a>
+                <button>
+                    <span class="menu_up"><i class="fa-solid fa-chevron-right"></i></span>
+                    <span class="menu_down"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+            </li>
+            <li>
+                <span class="beside"><i class="fa-solid fa-scroll"></i></span>
+                <a href="#">Pages</a>
+                <button>
+                    <span class="menu_up"><i class="fa-solid fa-chevron-right"></i></span>
+                    <span class="menu_down"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+            </li>
+            <li>
+                <span class="beside"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                <a href="#">Features</a>
+                <button>
+                    <span class="menu_up"><i class="fa-solid fa-chevron-right"></i></span>
+                    <span class="menu_down"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+            </li>
+            <li>
+                <span class="beside"><i class="fa-solid fa-blog"></i></span>
+                <a href="#">Blogs</a>
+                <button>
+                    <span class="menu_up"><i class="fa-solid fa-chevron-right"></i></span>
+                    <span class="menu_down"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+            </li>
+            <li>
+                <span class="beside"><i class="fa-solid fa-address-book"></i></span>
+                <a href="./Contact.html">Contact</a>
+            </li>
+          </ul>
+          <ul class="off_canvas_user">
+            <li>
+                <span class="user_icon"><i class="fa-regular fa-user"></i></span>
+                <a href="#">Login / Register</a>
+            </li>
+            <li>
+                <span class="user_icon"><i class="fa-regular fa-heart"></i></span>
+                <a href="./Wishlist.html">Wishlist</a>
+            </li>
+            <li>
+                <span class="user_icon"><i class="fa-solid fa-bag-shopping"></i></span>
+                <a href="#">Cart</a>
+            </li>
+          </ul>
+          <ul class="drop_down_menu">
+            <li>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Currency
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="drop_down_item" href="#">USD</a></li>
+                        <li><a class="drop_down_item" href="#">BDT</a></li>
+                        <li><a class="drop_down_item" href="#">EUR</a></li>
+                        <li><a class="drop_down_item" href="#">RUB</a></li>
+                        <li><a class="drop_down_item" href="#">SAR</a></li>
+                        <li><a class="drop_down_item" href="#">DKK</a></li>
+                        <li><a class="drop_down_item" href="#">CNY</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Language
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="drop_down_item" href="#">English</a></li>
+                        <li><a class="drop_down_item" href="#">Bangla</a></li>
+                        <li><a class="drop_down_item" href="#">Spanish</a></li>
+                        <li><a class="drop_down_item" href="#">Russian</a></li>
+                        <li><a class="drop_down_item" href="#">French</a></li>
+                        <li><a class="drop_down_item" href="#">Arabic</a></li>
+                        <li><a class="drop_down_item" href="#">Danish</a></li>
+                        <li><a class="drop_down_item" href="#">Chinese</a></li>
+                        <li><a class="drop_down_item" href="#">German</a></li>
+                        <li><a class="drop_down_item" href="#">Italian</a></li>
+                    </ul>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ==================== OFF-CANVAS END ==================== -->
+
+
+      <!-- ==================== SEARCH POP_UP START ==================== -->
+
+      <div class="search_popup">
+        <form action="" class="search_form">
+          <input type="text" placeholder="Looking for something specific?">
+          <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <span class="cross_btn"><i class="fa-solid fa-xmark"></i></span>
+      </div>
+
+      <!-- ==================== SEARCH POP_UP END ==================== -->
+
+
+      <!-- ==================== NAV FOOTER START ==================== -->
+
+      <section id="search_footer" class="d-lg-none">
+        <div class="container">
+          <div class="row">
+            <div class="col-2 mx-auto text-center">
+              <span class="search_footer_icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== NAV FOOTER END ==================== -->
+
+
+    <!-- ==================== NAV END ==================== -->
+
+
+    <!-- ==================== PAGE BANNER START ==================== -->
+
+    <section id="page_banner">
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                    <h4>PAGE NOT FOUND!</h4>
+                    <p>Sorry, we couldn’t find the page you where looking for.</p>
+                    <p>We suggest that you return to homepage.</p>
+                    <a class="btn_group" href="./Home.html">
+                        <span class="back_home">Back to Home</span> 
+                        <span class="right_arrow"><i class="fa-solid fa-arrow-right-long"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PAGE BANNER END ==================== -->
+
+
+    <!-- ==================== COMMON CONTACT START ==================== -->
+
+    <section id="common_contact">
+        <div class="container">
+            <div class="news_letter">
+                <div class="row justify-content-between upper">
+                    <div class="col-lg-5">
+                        <h3 class="our">Subscribe to Our Newsletter!</h3>
+                        <h5 class="engineer">Authoritatively morph 24/7 potentialities with error-free partnerships. Objectively 
+                        engineer multimedia.</h5>
+                    </div>
+                    <div class="col-lg-5 subscribe_input">
+                        <div class="input-group">
+                            <input type="text" class="form-control last_input" placeholder="Enter your email...." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <button class="input-group-text subscribe" id="basic-addon2">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_aytor">
+                <div class="row lower">
+                    <div class="col-lg-3">
+                        <img class="contact_logo" src="./Assets/Images/Common/Cmn_Contact_Logo.png" alt="">
+                        <p class="progressively">Progressively optimize effective ideas before turnkey process improvements. Proactively 
+                        disseminate
+                        </p>
+                        <div class="icon_grp">
+                            <a class="icon" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a class="icon" href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a class="icon" href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a class="icon" href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <h4>My Account</h4>
+                        <ul class="contact_ul">
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>My Account</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>View Cart</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>Wishlist</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>Compare</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>New Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h4>Support</h4>
+                        <ul class="contact_ul">
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>Help</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>Contact Us</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>Feedback</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>Customer Service</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>Store Locations</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h4>Shop</h4>
+                        <ul class="contact_ul">
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>Men’s Shopping</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>Women’s Shopping</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>Kids’ Shopping</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>Discounts</a></li>
+                            <li><a class="links" href="#"><span class="arrow"><i class="fa-solid fa-angle-right"></i></span>New Arrivels</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4>Contact Us</h4>
+                        <div class="location">
+                            <div class="col-12 d-flex flex-row">
+                                <div class="col-lg-1">
+                                    <span class="fab"><i class="fa-solid fa-location-dot"></i></span>
+                                </div>
+                                <div class="col-lg-11">
+                                    <a class="fab_content" href="#">2751 S Parker Rd, Aurora, CO 80014, United States</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="call">
+                            <div class="col-12 d-flex flex-row">
+                                <div class="col-lg-1">
+                                    <span class="fab"><i class="fa-solid fa-phone"></i></span>
+                                </div>
+                                <div class="col-lg-11">
+                                    <a class="fab_content" href="tel:+18008660286">+18008660286</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mail d-flex flex-column">
+                            <div class="col-12 d-flex flex-row">
+                                <div class="col-lg-1">
+                                    <span class="fab"><i class="fa-solid fa-envelope"></i></span>
+                                </div>
+                                <div class="col-lg-11">
+                                    <a class="fab_content" href="emailto:aytor.info@gmail.com">aytor.info@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex flex-row">
+                                <div class="col-lg-1"></div>
+                                <div class="col-lg-11">
+                                    <a class="fab_content info_aytor" href="emailto:info@aytor.com">info@aytor.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COMMON CONTACT END ==================== -->
+
+
+    <!-- ==================== COMMON FOOTER START ==================== -->
+
+    <section id="common_footer">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5 p-0">
+                    <p class="end_part">© 2022 All Rights Reserved <a class="end" href="./Home.html">Aytor</a> By <a class="end" href="#">Angfuzsoft</a></p>
+                </div>
+                <div class="col-lg-3 p-0">
+                    <img src="./Assets/Images/Common/End_Part.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COMMON FOOTER END ==================== -->
+
+
+
+
+
+    <!-- ==================== JQUERY START ==================== -->
+    <script src="./Assets/JS/jquery-3.7.1.min.js"></script>
+    <!-- ==================== JQUERY END ==================== -->
+
+    <!-- ==================== SLICK SLIDER START ==================== -->
+    <script src="./Assets/JS/slick.min.js"></script>
+    <!-- ==================== SLICK SLIDER END ==================== -->
+
+    <!-- ==================== BOOTSTRAP JS START ==================== -->
+    <script src="./Assets/JS/bootstrap.bundle.min.js"></script>
+    <!-- ==================== BOOTSTRAP JS END ==================== -->
+
+    <!-- ==================== CUSTOM JS START ==================== -->
+    <script src="./Assets/JS/app.js"></script>
+    <!-- ==================== CUSTOM JS END ==================== -->
+    
+</body>
+</html>
