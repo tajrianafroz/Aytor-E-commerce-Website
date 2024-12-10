@@ -1,0 +1,179 @@
+/* =================== MEGA SALE START =================== */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  #mega .content {
+    text-align: left;
+    padding: 242px 40px 240px 0;
+  }
+  #mega .up_to {
+    font-size: 60px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #mega .content {
+    text-align: left;
+    padding: 242px 16px 240px 0;
+  }
+  #mega .up_to {
+    font-size: 54px;
+  }
+  #mega .btn_group {
+    font-size: 18px;
+    padding: 14px 18px 14px 30px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #mega .content {
+    text-align: left;
+    padding: 242px 300px 240px 0;
+  }
+  #mega .up_to {
+    font-size: 52px;
+  }
+  #mega .btn_group {
+    font-size: 16px;
+    padding: 13px 16px 13px 28px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #mega .content {
+    text-align: left;
+    padding: 242px 50px 240px 0;
+  }
+  #mega .up_to {
+    font-size: 52px;
+  }
+  #mega .btn_group {
+    font-size: 16px;
+    padding: 13px 16px 13px 28px;
+  }
+}
+@media (max-width: 575.98px) {
+  #mega .content {
+    text-align: left;
+    padding: 242px 10px 240px 20px;
+  }
+  #mega .up_to {
+    font-size: 50px;
+  }
+  #mega .btn_group {
+    font-size: 16px;
+    padding: 12px 14px 12px 26px;
+  }
+  #mega .slide_active {
+    margin-left: 10px;
+  }
+}
+
+/* =================== MEGA SALE END =================== */
+
+/* =================== NEW ARRIVALS PRODUCTS START =================== */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #new_arrivals h3 {
+    font-size: 34px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #new_arrivals h3 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 575.98px) {
+  #new_arrivals h3 {
+    font-size: 32px;
+  }
+}
+/* =================== NEW ARRIVALS PRODUCTS END =================== */
+
+/* =================== SPA COSMETICS START =================== */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  #spa .content {
+    padding: 103px 0 103px 0;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #spa .spa_cream {
+    font-size: 32px;
+  }
+  #spa .globally {
+    font-size: 14px;
+  }
+  #spa .shop_grp {
+    padding: 16px 19px 16px 32px;
+    font-size: 17px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #spa .content {
+    padding: 103px 320px 103px 0;
+  }
+  #spa .spa_cream {
+    font-size: 32px;
+  }
+  #spa .globally {
+    font-size: 14px;
+  }
+  #spa .shop_grp {
+    padding: 15px 18px 15px 30px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #spa .content {
+    padding: 103px 170px 103px 0;
+  }
+  #spa .spa_cream {
+    font-size: 32px;
+  }
+  #spa .globally {
+    font-size: 14px;
+  }
+  #spa .shop_grp {
+    padding: 15px 18px 15px 30px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 575.98px) {
+  #spa .content {
+    padding: 103px 50px 103px 20px;
+  }
+  #spa .spa_cream {
+    font-size: 30px;
+  }
+  #spa .globally {
+    font-size: 12px;
+  }
+  #spa .shop_grp {
+    padding: 13px 16px 13px 27px;
+    font-size: 14px;
+  }
+}
+/* =================== SPA COSMETICS END =================== */
+
+/* =================== BEST SELLER PRODUCTS START =================== */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  #best_seller .card .product_icons {
+    top: 40px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #best_seller .card .product_icons {
+    top: 38px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #best_seller .card .product_icons {
+    top: 30px;
+  }
+}
+@media (max-width: 575.98px) {
+  #best_seller .seller_title {
+    font-size: 26px;
+  }
+  #best_seller p {
+    font-size: 16px;
+  }
+  #best_seller .product_title {
+    font-size: 22px;
+  }
+}
+/* =================== BEST SELLER PRODUCTS END =================== */

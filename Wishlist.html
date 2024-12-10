@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wishlist</title>
+    <link rel="shortcut icon" href="./Assets/Images/Main_logo.png" type="image/x-icon">
     <!-- ==================== GOOGLE FONT'S START ==================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,76 +33,166 @@
 </head>
 <body>
 
+
+    <!-- ==================== COMMON POP_UP START ==================== -->
+
+    <div class="commonPopup">
+      <div class="popupBox">
+        <div class="popupContent">
+          <h4>Newsletter</h4>
+          <p>Seamlessly disseminate interoperable collaboration and idea-sharing via magnetic catalysts for change. Interactively enable competitive customer service.</p>
+          <form action="">
+            <input type="text" placeholder="Enter Keyword...">
+            <button class="subScribe">Subscribe</button>
+          </form>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Don’t Show This Popup Again
+            </label>
+          </div>
+        </div>
+        <span class="popupClose"><i class="fa-solid fa-xmark"></i></span>
+      </div>
+    </div>
+
+    <!-- ==================== COMMON POP_UP END ==================== -->
+
+
+
     <!-- ==================== BLACK NAV START ==================== -->
+
+    <nav id="blackNav" class="navbar navbar-expand-lg d-none d-lg-block">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <span class="f7--paperplane"></span>
+          FREE SHIPING world wide for all orders over <span> $150</span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Track Your Order</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Language
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="drop_down_item" href="#">English</a></li>
+                  <li><a class="drop_down_item" href="#">Bangla</a></li>
+                  <li><a class="drop_down_item" href="#">Spanish</a></li>
+                  <li><a class="drop_down_item" href="#">Russian</a></li>
+                  <li><a class="drop_down_item" href="#">French</a></li>
+                  <li><a class="drop_down_item" href="#">Arabic</a></li>
+                  <li><a class="drop_down_item" href="#">Danish</a></li>
+                  <li><a class="drop_down_item" href="#">Chinese</a></li>
+                  <li><a class="drop_down_item" href="#">German</a></li>
+                  <li><a class="drop_down_item" href="#">Italian</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    USD
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="drop_down_item" href="#">USD</a></li>
+                  <li><a class="drop_down_item" href="#">BDT</a></li>
+                  <li><a class="drop_down_item" href="#">EUR</a></li>
+                  <li><a class="drop_down_item" href="#">RUB</a></li>
+                  <li><a class="drop_down_item" href="#">SAR</a></li>
+                  <li><a class="drop_down_item" href="#">DKK</a></li>
+                  <li><a class="drop_down_item" href="#">CNY</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link blackNavIcons" href="#"><span><i class="fa-brands fa-facebook-f"></i></span></a>
+              <a class="nav-link blackNavIcons" href="#"><span><i class="fa-brands fa-twitter"></i></span></a>
+              <a class="nav-link blackNavIcons" href="#"><span><i class="fa-brands fa-instagram"></i></span></a>
+              <a class="nav-link blackNavIcons" href="#"><span><i class="fa-brands fa-pinterest-p"></i></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- ==================== BLACK NAV END ==================== -->
+
 
 
     <!-- ==================== NAV START ==================== -->
 
-    <nav class="navbar navbar-expand-lg">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg">
       <div class="container">
         <a class="nav_logo" href="#">
           <img src="./Assets/Images/Common/Nav_Logo.png" alt="">
         </a>
         <span class="navbar-toggler" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-          <span><i class="fa-solid fa-bars"></i></span>
+          <span class=""><i class="fa-solid fa-bars"></i></span>
         </span>
         <div class="collapse navbar-collapse nav_portion" id="navbarSupportedContent">
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav_menu" href="./Home.html">Home</a>
+              <a class="nav_menu" href="./index.html">Home</a>
             </li>
             <li class="nav-item menu">
               <a class="nav_menu" href="#">Shop<span><i class="fa-solid fa-angle-down"></i></a>
                   <ul class="sub_menu">
-                      <li><a href="#">Blog</a></li>
-                      <li><a href="#">Blog One</a></li>
-                      <li><a href="#">Blog Two</a></li>
-                      <li><a href="#">Blog Three</a></li>
+                      <li><a href="./shop-grid.html">Grid</a></li>
+                      <li><a href="./shop.details.style.one.html">Details Style One</a></li>
+                      <li><a href="./compare.html">Compare</a></li>
+                      <li><a href="./cart.html">Cart</a></li>
+                      <li><a href="./checkout.html">Checkout</a></li>
+                      <li><a href="./wishlist.html">Wishlist</a></li>
                   </ul>
             </li>
             <li class="nav-item menu">
               <a class="nav_menu" href="#">Pages<span><i class="fa-solid fa-angle-down"></i></a>
                   <ul class="sub_menu">
-                      <li><a href="#">Blog</a></li>
-                      <li><a href="#">Blog One</a></li>
-                      <li><a href="#">Blog Two</a></li>
-                      <li><a href="#">Blog Three</a></li>
+                      <li><a href="./index.html">Home</a></li>
+                      <li><a href="./shop-grid.html">Shop</a></li>
+                      <li><a href="./aboutUs.html">Features</a></li>
+                      <li><a href="./blog.html">Blog</a></li>
+                      <li><a href="./contact.html">Contact</a></li>
+                      <li><a href="./cart.html">Cart</a></li>
+                      <li><a href="./checkout.html">Checkout</a></li>
+                      <li><a href="./wishlist.html">Wishlist</a></li>
                   </ul>
             </li>
             <li class="nav-item menu">
               <a class="nav_menu" href="#">Features<span><i class="fa-solid fa-angle-down"></i></a>
                   <ul class="sub_menu">
-                      <li><a href="#">Blog</a></li>
-                      <li><a href="#">Blog One</a></li>
-                      <li><a href="#">Blog Two</a></li>
-                      <li><a href="#">Blog Three</a></li>
+                      <li><a href="./aboutUs.html">About Us</a></li>
+                      <li><a href="./page.html">Page Not Found</a></li>
                   </ul>
             </li>
             <li class="nav-item menu">
               <a class="nav_menu" href="./Blog.html">Blogs<span><i class="fa-solid fa-angle-down"></i></a>
                   <ul class="sub_menu">
-                      <li><a href="./Blog.html">Blog</a></li>
-                      <li><a href="#">Blog - Classic</a></li>
-                      <li><a href="#">Blog - Classic With Sidebar</a></li>
-                      <li><a href="#">Blog - Details</a></li>
+                      <li><a href="./blog.html">Blog</a></li>
+                      <li><a href="./blogClassic.html">Classic</a></li>
+                      <li><a href="./blog-sidebar.html">Classic With Sidebar</a></li>
+                      <li><a href="./blog-details.html">Details</a></li>
                   </ul>
             </li>
             <li class="nav-item">
-              <a class="nav_menu" href="./Contact.html">Contact</a>
+              <a class="nav_menu" href="./contact.html">Contact</a>
             </li>
           </ul>
           <ul class="icons">
               <li class="search_icon"><a class="nav_icon" href="#">
                   <span><i class="fa-solid fa-magnifying-glass"></i></span>
               </a></li>
-              <li><a class="nav_icon" href="#">
+              <li class="accountLogin_icon"><a class="nav_icon" href="#">
                   <span><i class="fa-regular fa-user"></i></span>
               </a></li>
-              <li><a class="nav_icon" href="./Wishlist.html">
+              <li><a class="nav_icon" href="./wishlist.html">
                   <span><i class="fa-regular fa-heart"></i></span>
               </a></li>
-              <li><a class="nav_icon bag" href="#">
+              <li><a class="nav_icon bag" href="./cart.html">
                   <span><i class="fa-solid fa-bag-shopping"></i></span>
                   <span class="zero">0</span>
               </a></li>
@@ -122,11 +213,11 @@
           <ul class="off_canvas_menu">
             <li>
                 <span class="beside"><i class="fa-solid fa-house"></i></span>
-                <a href="./Home.html">Home</a>
+                <a href="./index.html">Home</a>
             </li>
             <li>
                 <span class="beside"><i class="fa-solid fa-shop"></i></span>
-                <a href="#">Shop</a>
+                <a href="./shop-grid.html">Shop</a>
                 <button>
                     <span class="menu_up"><i class="fa-solid fa-chevron-right"></i></span>
                     <span class="menu_down"><i class="fa-solid fa-chevron-down"></i></span>
@@ -142,7 +233,7 @@
             </li>
             <li>
                 <span class="beside"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-                <a href="#">Features</a>
+                <a href="./aboutUs.html">Features</a>
                 <button>
                     <span class="menu_up"><i class="fa-solid fa-chevron-right"></i></span>
                     <span class="menu_down"><i class="fa-solid fa-chevron-down"></i></span>
@@ -150,7 +241,7 @@
             </li>
             <li>
                 <span class="beside"><i class="fa-solid fa-blog"></i></span>
-                <a href="#">Blogs</a>
+                <a href="./blog.html">Blogs</a>
                 <button>
                     <span class="menu_up"><i class="fa-solid fa-chevron-right"></i></span>
                     <span class="menu_down"><i class="fa-solid fa-chevron-down"></i></span>
@@ -162,7 +253,7 @@
             </li>
           </ul>
           <ul class="off_canvas_user">
-            <li>
+            <li class="loginRegisterIcon">
                 <span class="user_icon"><i class="fa-regular fa-user"></i></span>
                 <a href="#">Login / Register</a>
             </li>
@@ -172,7 +263,7 @@
             </li>
             <li>
                 <span class="user_icon"><i class="fa-solid fa-bag-shopping"></i></span>
-                <a href="#">Cart</a>
+                <a href="./cart.html">Cart</a>
             </li>
           </ul>
           <ul class="drop_down_menu">
@@ -231,6 +322,28 @@
       <!-- ==================== SEARCH POP_UP END ==================== -->
 
 
+      <!-- ==================== LOGIN/REGISTER POP-UP START ==================== -->
+
+        <div class="loginBox">
+            <div class="login">
+                <form>
+                    <h1>Login/Register</h1>
+                    <label for="">Email</label>
+                    <input type="email">
+                    <label for="">Password</label>
+                    <input type="password">
+                    <button>Submit</button>
+                    <p>By creating an account, you agree to receive promotional emails. 
+                        You can unsubscribe anytime.
+                    </p>
+                </form>
+            </div>
+            <span class="loginClose"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+
+      <!-- ==================== LOGIN/REGISTER POP-UP END ==================== -->
+
+
       <!-- ==================== NAV FOOTER START ==================== -->
 
       <section id="search_footer" class="d-lg-none">
@@ -265,64 +378,59 @@
     <!-- ==================== WISHLIST BANNER END ==================== -->
 
 
-    <!-- ==================== CART TABLE START ==================== -->
+    <!-- ==================== PRODUCT WISHLIST START ==================== -->
 
-    <section id="cart_table">
+    <section id="productWishlist">
         <div class="container">
-            <div class="row cart_product">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead class="table-active">
-                            <tr>
-                                <th></th>
-                                <th>Product</th>
-                                <th></th>
-                                <th>Price/Unit</th>
-                                <th>Stock Status</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                            <tr>
-                                <td><span class="cross_mark"><i class="fa-solid fa-xmark"></i></span></td>
-                                <td><img src="./Assets/Images/Wishlist/Wishlist_Product_1.png" alt=""></td>
-                                <td><a class="item_title" href="#">Jacket Hoodie Sweater</a></td>
-                                <td>$130.00</td>
-                                <td><span class="check"><i class="fa-solid fa-check"></i></span>In Stock</td>
-                                <td><a class="btn_group" href="#">Add to Cart</a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="cross_mark"><i class="fa-solid fa-xmark"></i></span></td>
-                                <td><img src="./Assets/Images/Wishlist/Wishlist_Product_2.png" alt=""></td>
-                                <td><a class="item_title" href="#">Nike Sports Shoes</a></td>
-                                <td>$100.00</td>
-                                <td><span class="check"><i class="fa-solid fa-check"></i></span>In Stock</td>
-                                <td><a class="btn_group" href="#">Add to Cart</a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="cross_mark"><i class="fa-solid fa-xmark"></i></span></td>
-                                <td><img src="./Assets/Images/Wishlist/Wishlist_Product_3.png" alt=""></td>
-                                <td><a class="item_title" href="#">Apple Smart Watch</a></td>
-                                <td>$750.00</td>
-                                <td><span class="check"><i class="fa-solid fa-check"></i></span>In Stock</td>
-                                <td><a class="btn_group" href="#">Add to Cart</a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="cross_mark"><i class="fa-solid fa-xmark"></i></span></td>
-                                <td><img src="./Assets/Images/Wishlist/Wishlist_Product_4.png" alt=""></td>
-                                <td><a class="item_title" href="#">Wireless Bluetooth Speaker</a></td>
-                                <td>$130.00</td>
-                                <td><span class="check"><i class="fa-solid fa-check"></i></span>In Stock</td>
-                                <td><a class="btn_group" href="#">Add to Cart</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="row">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="firstHeading" colspan="3">Product</th>
+                            <th>Price/Unit</th>
+                            <th class="secondHeading" colspan="2">Stock Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a class="remove" href="#"><span><i class="fa-solid fa-xmark"></i></span></a></td>
+                            <td><img src="./Assets/Images/Wishlist/Wishlist_Product_1.png" alt=""></td>
+                            <td class="productTitle">Jacket Hoodie Sweater</td>
+                            <td>$130.00</td>
+                            <td><span class="checkMark"><i class="fa-solid fa-check"></i></span>In Stock</td>
+                            <td><a class="btn_group" href="#">Add to Cart</a></td>
+                        </tr>
+                        <tr>
+                            <td><a class="remove" href="#"><span><i class="fa-solid fa-xmark"></i></span></a></td>
+                            <td><img src="./Assets/Images/Wishlist/Wishlist_Product_2.png" alt=""></td>
+                            <td class="productTitle">Nike Sports Shoes</td>
+                            <td>$100.00</td>
+                            <td><span class="checkMark"><i class="fa-solid fa-check"></i></span>In Stock</td>
+                            <td><a class="btn_group" href="#">Add to Cart</a></td>
+                        </tr>
+                        <tr>
+                            <td><a class="remove" href="#"><span><i class="fa-solid fa-xmark"></i></span></a></td>
+                            <td><img src="./Assets/Images/Wishlist/Wishlist_Product_3.png" alt=""></td>
+                            <td class="productTitle">Apple Smart Watch</td>
+                            <td>$750.00</td>
+                            <td><span class="checkMark"><i class="fa-solid fa-check"></i></span>In Stock</td>
+                            <td><a class="btn_group" href="#">Add to Cart</a></td>
+                        </tr>
+                        <tr>
+                            <td><a class="remove" href="#"><span><i class="fa-solid fa-xmark"></i></span></a></td>
+                            <td><img src="./Assets/Images/Wishlist/Wishlist_Product_4.png" alt=""></td>
+                            <td class="productTitle">Wireless Bluetooth Speaker</td>
+                            <td>$130.00</td>
+                            <td><span class="checkMark"><i class="fa-solid fa-check"></i></span>In Stock</td>
+                            <td><a class="btn_group" href="#">Add to Cart</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- ==================== CART TABLE END ==================== -->
+    <!-- ==================== PRODUCT WISHLIST END ==================== -->
 
 
     <!-- ==================== COMMON CONTACT START ==================== -->
@@ -451,6 +559,16 @@
     </section>
 
     <!-- ==================== COMMON FOOTER END ==================== -->
+
+
+
+    <!-- ==================== UP ARROW START ==================== -->
+
+    <a href="#">
+      <span class="go_up"><i class="fa-solid fa-angle-up"></i></span>
+    </a>
+
+    <!-- ==================== UP ARROW END ==================== -->
 
 
 
