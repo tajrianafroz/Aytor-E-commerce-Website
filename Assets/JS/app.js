@@ -1,18 +1,3 @@
-// ================ COMMON POP_UP START ================
-
-$(window).on("load", function () {
-  $(document).on("click", function (event) {
-    if (!$(event.target).closest(".popupBox").length) {
-      $(".commonPopup").fadeOut(); // Fade out korbe
-    }
-  });
-  $(".popupClose").on("click", function () {
-    $(".commonPopup").fadeOut();
-  });
-});
-
-// ================ COMMON POP_UP END ================
-
 // ================ NAV START ================
 let navMenus = document.querySelectorAll(".nav_menu");
 
@@ -38,18 +23,15 @@ navIcons.forEach(function (navIcon) {
 
 // ================ NAV POP_UP START ================
 
-let mainNavbar = document.querySelector("#mainNavbar");
-let initvalue = 0;
-
 window.addEventListener("scroll", function () {
   let currentScrollY = window.scrollY;
-
-  if (initvalue > currentScrollY) {
+  let mainNavbar = document.querySelector(".navbar");
+  if (currentScrollY > 500) {
     mainNavbar.classList.add("popUp_nav");
-  }
-  if (initvalue < 500) {
+  } else {
     mainNavbar.classList.remove("popUp_nav");
   }
+
   initvalue = currentScrollY;
 });
 // ================ NAV POP_UP END ================
@@ -81,30 +63,259 @@ searchPopup.addEventListener("click", (e) => {
   }
 });
 // ================ SEARCH POP_UP END ================
+//main login/reg start
+let roleBox = document.querySelector(".roleBox");
+let roleButtons = document.querySelectorAll(".roleBtn");
+let selectedRole = null;
 
-// ================ LOGIN/REGISTER POP-UP START ================
-let loginBox = document.querySelector(".loginBox");
-let accountLoginIcon = document.querySelector(".accountLogin_icon");
-let loginClose = document.querySelector(".loginClose");
+// ================= AUTO ADMIN CREATE =================
+let users = JSON.parse(localStorage.getItem("users")) || [];
 
-accountLoginIcon.addEventListener("click", function () {
-  if (!loginBox.classList.contains("loginBox_active")) {
-    loginBox.classList.add("loginBox_active");
+if (!users.find((u) => u.role === "admin")) {
+  users.push({
+    name: "Admin",
+    email: "admin@gmail.com",
+    username: "admin",
+    password: "12345678",
+    role: "admin",
+  });
+
+  localStorage.setItem("users", JSON.stringify(users));
+}
+
+// ================= DOM READY =================
+document.addEventListener("DOMContentLoaded", function () {
+  let loginBox = document.querySelector(".loginBox");
+  let accountLoginIcon = document.querySelector(".accountLogin_icon");
+  let loginClose = document.querySelector(".loginClose");
+
+  let loginPanel = document.querySelector(".login-panel");
+  let registerPanel = document.querySelector(".register-panel");
+
+  let showRegister = document.querySelector("#showRegister");
+  let showLogin = document.querySelector("#showLogin");
+
+  let registerBtn = document.querySelector("#registerBtn");
+  let loginBtn = document.querySelector("#loginBtn");
+
+  // ================= NAVBAR ICON CLICK =================
+  if (accountLoginIcon) {
+    accountLoginIcon.addEventListener("click", () => {
+      let isLoggedIn = localStorage.getItem("isLoggedIn");
+      let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+      if (!isLoggedIn || !currentUser) {
+        roleBox.classList.add("active");
+        return;
+      }
+
+      if (currentUser.role === "admin") {
+        window.location.href = "./admin.html";
+      } else {
+        window.location.href = "./profile.html";
+      }
+    });
+  }
+
+  // ================= ROLE SELECT =================
+  roleButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      selectedRole = btn.dataset.role;
+      localStorage.setItem("role", selectedRole);
+
+      roleBox.classList.remove("active");
+      loginBox.classList.add("loginBox_active");
+
+      document.querySelector(".login-panel h1").innerText =
+        selectedRole === "admin" ? "Admin Login" : "User Login";
+
+      document.querySelector(".register-panel h1").innerText =
+        selectedRole === "admin" ? "Admin Register" : "User Register";
+    });
+  });
+
+  // ================= CLOSE ROLE BOX =================
+  roleBox.addEventListener("click", (e) => {
+    if (e.target === roleBox) {
+      roleBox.classList.remove("active");
+    }
+  });
+
+  // ================= RESET =================
+  function resetAll() {
+    document
+      .querySelectorAll(".auth-container input")
+      .forEach((input) => (input.value = ""));
+
+    document
+      .querySelectorAll(".auth-message")
+      .forEach((msg) => (msg.innerText = ""));
+
+    registerPanel.classList.remove("active");
+    loginPanel.classList.add("active");
+  }
+
+  if (loginClose) {
+    loginClose.addEventListener("click", () => {
+      loginBox.classList.remove("loginBox_active");
+      resetAll();
+    });
+  }
+
+  if (loginBox) {
+    loginBox.addEventListener("click", (e) => {
+      if (e.target.classList.contains("loginBox_active")) {
+        loginBox.classList.remove("loginBox_active");
+        resetAll();
+      }
+    });
+  }
+
+  // ================= SWITCH PANEL =================
+  if (showRegister) {
+    showRegister.addEventListener("click", () => {
+      loginPanel.classList.remove("active");
+      registerPanel.classList.add("active");
+      document.getElementById("loginMessage").innerText = "";
+    });
+  }
+
+  if (showLogin) {
+    showLogin.addEventListener("click", () => {
+      registerPanel.classList.remove("active");
+      loginPanel.classList.add("active");
+      document.getElementById("registerMessage").innerText = "";
+    });
+  }
+
+  // ================= PASSWORD TOGGLE =================
+  document.querySelectorAll(".togglePass").forEach((icon) => {
+    icon.addEventListener("click", function () {
+      let input = this.parentElement.querySelector("input");
+
+      if (input.type === "password") {
+        input.type = "text";
+        this.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+      } else {
+        input.type = "password";
+        this.innerHTML = '<i class="fa-solid fa-eye"></i>';
+      }
+    });
+  });
+
+  // ================= REGISTER =================
+  if (registerBtn) {
+    registerBtn.addEventListener("click", () => {
+      let name = regName.value.trim();
+      let email = regEmail.value.trim();
+      let username = regUsername.value.trim();
+      let password = regPassword.value.trim();
+      let confirmPassword = regConfirmPassword.value.trim();
+
+      let message = document.getElementById("registerMessage");
+
+      if (!name || !email || !username || !password || !confirmPassword) {
+        message.innerText = "All fields required!";
+        message.style.color = "red";
+        return;
+      }
+
+      if (password.length < 8) {
+        message.innerText = "Password must be 8+ characters!";
+        message.style.color = "red";
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        message.innerText = "Passwords do not match!";
+        message.style.color = "red";
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      if (users.find((u) => u.username === username)) {
+        message.innerText = "Username already exists!";
+        message.style.color = "red";
+        return;
+      }
+
+      users.push({
+        name,
+        email,
+        username,
+        password,
+        role: selectedRole || "user",
+      });
+
+      localStorage.setItem("users", JSON.stringify(users));
+
+      message.innerText = "Registration successful!";
+      message.style.color = "green";
+
+      document
+        .querySelectorAll(".register-panel input")
+        .forEach((i) => (i.value = ""));
+    });
+  }
+
+  // ================= LOGIN =================
+  if (loginBtn) {
+    loginBtn.addEventListener("click", () => {
+      let username = loginUsername.value.trim();
+      let password = loginPassword.value.trim();
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      let message = document.getElementById("loginMessage");
+      let selectedRole = localStorage.getItem("role");
+
+      if (!username || !password) {
+        message.innerText = "Fill all fields!";
+        message.style.color = "red";
+        return;
+      }
+
+      let user = users.find((u) => u.username === username);
+
+      if (!user) {
+        message.innerText = "User not found!";
+        message.style.color = "red";
+        return;
+      }
+
+      if (user.password !== password) {
+        message.innerText = "Incorrect password!";
+        message.style.color = "red";
+        return;
+      }
+
+      if (user.role !== selectedRole) {
+        message.innerText =
+          selectedRole === "admin"
+            ? "This is not an admin account!"
+            : "This is not a user account!";
+        message.style.color = "red";
+        return;
+      }
+
+      message.innerText = "Login successful!";
+      message.style.color = "green";
+
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      localStorage.setItem("isLoggedIn", "true");
+
+      document
+        .querySelectorAll(".login-panel input")
+        .forEach((i) => (i.value = ""));
+
+      setTimeout(() => {
+        window.location.href =
+          user.role === "admin" ? "./admin.html" : "./profile.html";
+      }, 1000);
+    });
   }
 });
-loginClose.addEventListener("click", function () {
-  if (loginBox.classList.contains("loginBox_active")) {
-    loginBox.classList.remove("loginBox_active");
-  }
-});
-loginBox.addEventListener("click", (e) => {
-  if (e.target.classList.contains("loginBox_active")) {
-    loginBox.classList.remove("loginBox_active");
-  }
-});
-
-// ================ LOGIN/REGISTER POP-UP END ================
-
+//main login/reg end
 // ================ OFF-CANVAS START ================
 let menuUps = document.querySelectorAll(".menu_up");
 let menuDowns = document.querySelectorAll(".menu_down");
@@ -112,7 +323,8 @@ let menuDowns = document.querySelectorAll(".menu_down");
 menuUps.forEach(function (menuUp) {
   menuUp.addEventListener("click", function () {
     menuUp.classList.add("down_active");
-    menuUp.parentNode.querySelector(".menu_down").classList.add("down_active");
+    let parent = menuUp.closest("li");
+    parent.querySelector(".menu_down").classList.add("down_active");
   });
 });
 
@@ -131,11 +343,14 @@ let offcanvasLogin = document.querySelector(".loginBox");
 let loginRegisterIcon = document.querySelector(".loginRegisterIcon");
 let canvaLoginClose = document.querySelector(".loginClose");
 
-loginRegisterIcon.addEventListener("click", function () {
-  if (!offcanvasLogin.classList.contains("loginBox_active")) {
-    offcanvasLogin.classList.add("loginBox_active");
-  }
-});
+if (loginRegisterIcon) {
+  loginRegisterIcon.addEventListener("click", function () {
+    if (!offcanvasLogin.classList.contains("loginBox_active")) {
+      offcanvasLogin.classList.add("loginBox_active");
+    }
+  });
+}
+
 canvaLoginClose.addEventListener("click", function () {
   if (offcanvasLogin.classList.contains("loginBox_active")) {
     offcanvasLogin.classList.remove("loginBox_active");
@@ -153,31 +368,17 @@ offcanvasLogin.addEventListener("click", (e) => {
 // ================ OFF-CANVAS END ================
 
 // ================ NAV FOOTER START ================
-let footerPopup = document.querySelector(".search_popup");
-let footerIcon = document.querySelector(".search_footer_icon");
-let footerCross = document.querySelector(".cross_btn");
-let footerForm = document.querySelector(".search_form");
+function toggleSearch(icon, popup, form, cross) {
+  icon.addEventListener("click", () => {
+    popup.classList.add("search_popup_active");
+    form.classList.add("search_form_active");
+  });
 
-footerIcon.addEventListener("click", function () {
-  if (!footerPopup.classList.contains("search_popup_active")) {
-    footerPopup.classList.add("search_popup_active");
-    footerForm.classList.add("search_form_active");
-  }
-});
-
-footerCross.addEventListener("click", function () {
-  if (footerPopup.classList.contains("search_popup_active")) {
-    footerPopup.classList.remove("search_popup_active");
-    footerForm.classList.remove("search_form_active");
-  }
-});
-
-footerPopup.addEventListener("click", (e) => {
-  if (e.target.classList.contains("search_popup_active")) {
-    footerPopup.classList.remove("search_popup_active");
-    footerForm.classList.remove("search_form_active");
-  }
-});
+  cross.addEventListener("click", () => {
+    popup.classList.remove("search_popup_active");
+    form.classList.remove("search_form_active");
+  });
+}
 // ================ NAV FOOTER END ================
 
 // ================ NAV END ================
@@ -195,47 +396,6 @@ $(function () {
   });
 });
 // ================ MEGA SALE END ================
-
-// ================ NEW ARRIVALS PRODUCT START ================
-$(function () {
-  $(".all_products").slick({
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    arrows: true,
-    prevArrow: `<span class="left_arrow"><i class="fa-solid fa-chevron-left"></i></span>`,
-    nextArrow: `<span class="right_arrow"><i class="fa-solid fa-chevron-right"></i></span>`,
-    autoplay: true,
-    autoplaySpeed: 2400,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  });
-});
-
-// ================ NEW ARRIVALS PRODUCT END ================
 
 // ================ DEALS OF THE DAYS START ================
 
@@ -281,36 +441,38 @@ let hoursElement = document.querySelector(".hours");
 let minutesElement = document.querySelector(".minutes");
 let secondsElement = document.querySelector(".seconds");
 
-// Initialize total countdown time in seconds
-let totalSeconds =
-  parseInt(daysElement.textContent) * 24 * 60 * 60 +
-  parseInt(hoursElement.textContent) * 60 * 60 +
-  parseInt(minutesElement.textContent) * 60 +
-  parseInt(secondsElement.textContent);
+if (daysElement && hoursElement && minutesElement && secondsElement) {
+  // Initialize total countdown time in seconds
+  let totalSeconds =
+    parseInt(daysElement.textContent) * 24 * 60 * 60 +
+    parseInt(hoursElement.textContent) * 60 * 60 +
+    parseInt(minutesElement.textContent) * 60 +
+    parseInt(secondsElement.textContent);
 
-countdown = setInterval(function () {
-  const days = Math.floor(totalSeconds / (24 * 60 * 60));
-  const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
+  countdown = setInterval(function () {
+    const days = Math.floor(totalSeconds / (24 * 60 * 60));
+    const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
 
-  // Update the countdown display
-  daysElement.textContent = days < 10 ? "0" + days : days;
-  hoursElement.textContent = hours < 10 ? "0" + hours : hours;
-  minutesElement.textContent = minutes < 10 ? "0" + minutes : minutes;
-  secondsElement.textContent = seconds < 10 ? "0" + seconds : seconds;
+    // Update the countdown display
+    daysElement.textContent = days < 10 ? "0" + days : days;
+    hoursElement.textContent = hours < 10 ? "0" + hours : hours;
+    minutesElement.textContent = minutes < 10 ? "0" + minutes : minutes;
+    secondsElement.textContent = seconds < 10 ? "0" + seconds : seconds;
 
-  if (totalSeconds <= 0) {
-    clearInterval(countdown);
-    daysElement.textContent = "00";
-    hoursElement.textContent = "00";
-    minutesElement.textContent = "00";
-    secondsElement.textContent = "00";
-    alert("Time's up!");
-  }
+    if (totalSeconds <= 0) {
+      clearInterval(countdown);
+      daysElement.textContent = "00";
+      hoursElement.textContent = "00";
+      minutesElement.textContent = "00";
+      secondsElement.textContent = "00";
+      alert("Time's up!");
+    }
 
-  totalSeconds--;
-}, 1000);
+    totalSeconds--;
+  }, 1000);
+}
 
 // ============ DEALS COUNTDOWN END ============
 
@@ -376,10 +538,104 @@ $(function () {
 /** ::::: TOOLTIP START ::::: */
 
 const tooltipTriggerList = document.querySelectorAll(
-  '[data-bs-toggle="tooltip"]'
+  '[data-bs-toggle="tooltip"]',
 );
 const tooltipList = [...tooltipTriggerList].map(
-  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
 );
 
 /** ::::: TOOLTIP END ::::: */
+
+// ================ CART CODE START ================
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// ================= CART BADGE =================
+function updateCartCount() {
+  let count = cart.reduce((sum, item) => {
+    return sum + Number(item.quantity || 0);
+  }, 0);
+
+  let badge = document.querySelector(".zero");
+  if (badge) {
+    badge.innerText = count;
+  }
+}
+
+// ================= SAVE CART =================
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+// ================= ADD TO CART =================
+function addToCartGlobal(name, price, img, quantity) {
+  let existing = cart.find((item) => item.name === name);
+
+  if (existing) {
+    existing.quantity += Number(quantity);
+  } else {
+    cart.push({
+      name,
+      price: Number(price),
+      img,
+      quantity: Number(quantity),
+    });
+  }
+
+  saveCart();
+}
+
+// ================= REMOVE ITEM =================
+function removeFromCartGlobal(index) {
+  cart.splice(index, 1);
+  saveCart();
+}
+
+// ================= UPDATE QTY =================
+function updateQtyGlobal(index, change) {
+  if (!cart[index]) return;
+
+  cart[index].quantity += change;
+
+  if (cart[index].quantity < 1) {
+    cart[index].quantity = 1;
+  }
+
+  saveCart();
+}
+
+// ================= INIT =================
+document.addEventListener("DOMContentLoaded", function () {
+  updateCartCount();
+});
+// ================ CART CODE END ================
+
+//vendor product post
+function loadAllProducts() {
+  let products = JSON.parse(localStorage.getItem("products")) || [];
+  let container = document.getElementById("productContainer");
+
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  products.forEach((p) => {
+    container.innerHTML += `
+      <div class="col-md-3">
+        <div class="card p-2">
+          <img src="${p.img}" height="150">
+          <h5>${p.name}</h5>
+          <p>$${p.price}</p>
+
+          <button onclick="addToCart('${p.name}', '${p.price}', '${p.img}')" 
+          class="btn btn-success">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    `;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", loadAllProducts);
+

@@ -36,265 +36,15 @@ p {
   --font-family: "Josefin Sans", sans-serif;
   --second-family: "Roboto", sans-serif;
 }
+body {
+  padding-top: 100px;
+}
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+}
 /* =================== COMMON CSS END =================== */
-
-/* =================== COMMON POP_UP START =================== */
-.commonPopup {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.582);
-  z-index: 999999999999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.25ms;
-}
-.commonPopup .popupBox {
-  width: 900px;
-  height: 500px;
-  background-image: url(../Images/Common/PopUp_Image.png);
-  position: relative;
-}
-.commonPopup .popupBox .popupClose {
-  position: absolute;
-  top: 7px;
-  right: 24px;
-  color: var(--comon-colot);
-  font-size: 28px;
-  cursor: pointer;
-}
-.commonPopup .popupBox .popupContent {
-  padding: 40px 125px 207px;
-  position: relative;
-}
-.commonPopup .popupBox .popupContent h4 {
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 128%;
-  text-align: center;
-  color: var(--comon-colot);
-}
-.commonPopup .popupBox .popupContent p {
-  font-family: var(--second-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 175%;
-  text-align: center;
-  color: var(--comon-colot);
-  padding: 15px 0 33px 0;
-}
-.commonPopup .popupBox .popupContent form {
-  display: flex;
-  flex-direction: row;
-}
-.commonPopup .popupBox .popupContent form input {
-  padding: 11px 20px;
-  margin-right: 10px;
-  width: 100%;
-  max-width: 500px;
-  border: none;
-}
-.commonPopup .popupBox .popupContent input::placeholder {
-  font-family: var(--second-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 175%;
-  color: #828282;
-}
-.commonPopup .popupBox .popupContent button {
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 167%;
-  text-align: center;
-  color: var(--comon-colot);
-  padding: 10px 30px;
-  background-color: var(--third-primary-color);
-}
-.commonPopup .popupBox .popupContent .form-check {
-  margin-top: 25px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.commonPopup .popupBox .popupContent .form-check label {
-  font-family: var(--second-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 175%;
-  color: var(--comon-colot);
-}
-
-/* ::::: MEDIA QUERIES START ::::: */
-@media (max-width: 1199.98px) {
-  .commonPopup .popupBox {
-    display: block;
-    width: 850px;
-    height: 450px;
-    object-fit: cover;
-  }
-}
-@media (max-width: 991.98px) {
-  .commonPopup .popupBox {
-    display: block;
-    width: 820px;
-    height: 420px;
-    object-fit: cover;
-    margin: 0 20px;
-  }
-  .commonPopup .popupBox .popupClose {
-    font-size: 26px;
-  }
-  .commonPopup .popupBox .popupContent {
-    padding: 40px 125px 207px;
-  }
-  .commonPopup .popupBox .popupContent h4 {
-    font-size: 34px;
-  }
-  .commonPopup .popupBox .popupContent p {
-    font-size: 16px;
-  }
-  .commonPopup .popupBox .popupContent form input {
-    padding: 9px 20px;
-    width: 100%;
-    max-width: 480px;
-  }
-  .commonPopup .popupBox .popupContent button {
-    font-size: 16px;
-    padding: 9px 24px;
-  }
-  .commonPopup .popupBox .popupContent .form-check {
-    margin-top: 20px;
-  }
-}
-@media (max-width: 767.98px) {
-  .commonPopup .popupBox {
-    display: block;
-    width: 800px;
-    height: 400px;
-    object-fit: cover;
-    margin: 0 30px;
-  }
-  .commonPopup .popupBox .popupClose {
-    font-size: 22px;
-  }
-  .commonPopup .popupBox .popupContent {
-    padding: 40px 80px 207px;
-  }
-  .commonPopup .popupBox .popupContent h4 {
-    font-size: 30px;
-  }
-  .commonPopup .popupBox .popupContent p {
-    font-size: 14px;
-    padding: 10px 0 25px 0;
-  }
-  .commonPopup .popupBox .popupContent form input {
-    padding: 8px 14px;
-    margin-right: 6px;
-    width: 100%;
-    max-width: 440px;
-  }
-  .commonPopup .popupBox .popupContent input::placeholder {
-    font-size: 14px;
-  }
-  .commonPopup .popupBox .popupContent button {
-    font-size: 14px;
-    padding: 8px 14px;
-  }
-  .commonPopup .popupBox .popupContent .form-check {
-    margin-top: 20px;
-  }
-  .commonPopup .popupBox .popupContent .form-check label {
-    font-size: 14px;
-  }
-}
-@media (max-width: 575.98px) {
-  .commonPopup .popupBox {
-    display: block;
-    width: 800px;
-    height: 350px;
-    object-fit: cover;
-    margin: 0 50px;
-  }
-  .commonPopup .popupBox .popupClose {
-    font-size: 20px;
-  }
-  .commonPopup .popupBox .popupContent {
-    padding: 40px 40px 170px;
-  }
-  .commonPopup .popupBox .popupContent h4 {
-    font-size: 30px;
-  }
-  .commonPopup .popupBox .popupContent p {
-    font-size: 12px;
-    padding: 10px 0 25px 0;
-  }
-  .commonPopup .popupBox .popupContent form input {
-    padding: 7px 10px;
-    margin-right: 4px;
-    width: 100%;
-    max-width: 300px;
-  }
-  .commonPopup .popupBox .popupContent input::placeholder {
-    font-size: 12px;
-  }
-  .commonPopup .popupBox .popupContent button {
-    font-size: 12px;
-    padding: 7px 10px;
-  }
-  .commonPopup .popupBox .popupContent .form-check {
-    margin-top: 20px;
-  }
-  .commonPopup .popupBox .popupContent .form-check label {
-    font-size: 12px;
-  }
-}
-@media (max-width: 479.98px) {
-  .commonPopup .popupBox {
-    display: block;
-    width: 730px;
-    height: 300px;
-    object-fit: cover;
-    margin: 0 40px;
-  }
-  .commonPopup .popupBox .popupClose {
-    font-size: 20px;
-  }
-  .commonPopup .popupBox .popupContent {
-    padding: 40px 18px 40px;
-  }
-  .commonPopup .popupBox .popupContent h4 {
-    font-size: 24px;
-  }
-  .commonPopup .popupBox .popupContent p {
-    font-size: 10px;
-    padding: 8px 0 16px 0;
-  }
-  .commonPopup .popupBox .popupContent form input {
-    padding: 6px 8px;
-    margin-right: 3px;
-    width: 100%;
-    max-width: 300px;
-  }
-  .commonPopup .popupBox .popupContent input::placeholder {
-    font-size: 10px;
-  }
-  .commonPopup .popupBox .popupContent button {
-    font-size: 10px;
-    padding: 6px 8px;
-  }
-  .commonPopup .popupBox .popupContent .form-check {
-    margin-top: 15px;
-  }
-  .commonPopup .popupBox .popupContent .form-check label {
-    font-size: 10px;
-  }
-}
-/* ::::: MEDIA QUERIES END ::::: */
-
-/* =================== COMMON POP_UP END =================== */
 
 /* =================== BLACK NAV START =================== */
 #blackNav {
@@ -407,14 +157,20 @@ p {
 
 /* =================== NAV START =================== */
 .navbar {
-  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 999;
 }
-nav {
-  box-shadow: 3px 3px 30px rgba(32, 30, 30, 0.227);
-  width: 100%;
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.2); /* optional dark overlay */
+  z-index: -1;
 }
-
 /* ======== NAV POP_UP START ======== */
 nav.popUp_nav {
   position: fixed;
@@ -430,7 +186,11 @@ nav.popUp_nav {
   }
 }
 /* ======== NAV POP_UP END ======== */
-
+nav .nav_logo {
+  color: #fff;
+  font-size: 50px;
+  font-family: var(--fancy);
+}
 nav .nav_portion .navbar-nav {
   height: 100px;
 }
@@ -441,11 +201,11 @@ nav .nav_portion .navbar-nav .nav-item {
 }
 nav .nav_menu {
   height: 100%;
-  font-family: var(--font-family);
+  font-family: var(--roboto);
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
-  color: var(--text-color);
+  color: #f1f1f1;
   padding: 0 21px;
 }
 nav .nav_menu:hover {
@@ -460,7 +220,7 @@ nav .icons {
   padding-left: 0;
 }
 nav .nav_icon {
-  color: var(--third-primary-color);
+  color: #f1f1f1;
   font-size: 16px;
   padding: 0 13px;
   font-weight: 400;
@@ -510,7 +270,7 @@ nav .sub_menu li {
   width: 100%;
   background-color: var(--comon-colot);
   padding: 10px 10px 0 15px;
-  font-family: var(--font-family);
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 162%;
@@ -572,31 +332,21 @@ nav .menu:hover .sub_menu {
   left: 0;
   transition: 0.5s;
 }
-
 /* ::::: MEDIA QUERIES START ::::: */
 
 @media (max-width: 1199.98px) {
-  nav .nav_logo img {
-    display: block;
-    width: 148px;
-    height: 57px;
-    object-fit: cover;
+  nav .nav_logo {
+    font-size: 44px;
   }
 }
 @media (max-width: 991.98px) {
-  nav .nav_logo img {
-    display: block;
-    width: 145px;
-    height: 54px;
-    object-fit: cover;
+  nav .nav_logo {
+    font-size: 40px;
   }
 }
 @media (max-width: 479.98px) {
-  nav .nav_logo img {
-    display: block;
-    width: 128px;
-    height: 40px;
-    object-fit: cover;
+  nav .nav_logo {
+    font-size: 36px;
   }
 }
 

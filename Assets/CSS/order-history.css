@@ -48,7 +48,6 @@ body {
 }
 /* =================== COMMON CSS END =================== */
 
-
 /* =================== NAV START =================== */
 .navbar {
   position: fixed;
@@ -57,12 +56,13 @@ body {
   width: 100%;
   z-index: 999;
 }
+
 .navbar::before {
   content: "";
   position: absolute;
   inset: 0;
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.2); /* optional dark overlay */
   z-index: -1;
 }
 /* ======== NAV POP_UP START ======== */
@@ -252,6 +252,11 @@ nav .navbar-toggler {
 }
 .offcanvas {
   z-index: 999999999999999;
+}
+.offcanvas .offcanvas-header h2 {
+  color: #ff6e61f3;
+  font-size: 50px;
+  font-family: var(--fancy);
 }
 .off_canvas_menu {
   width: 100%;
@@ -590,8 +595,11 @@ nav .navbar-toggler {
   display: flex !important;
 }
 
-form {
+.auth-panel {
   display: none;
+}
+.auth-panel.active {
+  display: block;
 }
 .auth-container {
   width: 420px;
@@ -602,14 +610,6 @@ form {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.auth-panel {
-  display: none;
-}
-
-.auth-panel.active {
-  display: block;
 }
 .auth-panel.active h1 {
   font-family: var(--roboto);
@@ -799,207 +799,33 @@ form {
 
 /* =================== NAV END =================== */
 
-/* =================== CONTACT DETAILS START =================== */
-#contact_details {
-  padding: 100px 0;
+/* =================== ORDER HISTORY START =================== */
+.order-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background: #fafafa;
 }
-#contact_details .box {
-  padding: 42px 0 40px 0;
-}
-#contact_details .fa_icon {
-  display: inline-block;
-  color: var(--first-primary-color);
-  font-size: 24px;
-  padding-left: 29px;
-}
-#contact_details h4 {
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 142%;
-  color: var(--text-color);
-  padding-bottom: 16px;
-}
-#contact_details p {
-  font-family: var(--second-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 175%;
-  color: var(--paragraph-color);
-  padding-bottom: 16px;
-}
-#contact_details h5 {
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 156%;
-  color: var(--text-color);
-  padding: 16px 0 4px 0;
-}
-#contact_details a {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 162%;
-  color: var(--paragraph-color);
-}
-#contact_details a:hover {
-  color: var(--first-primary-color);
-}
-#contact_details .details_icon {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 162%;
-  color: var(--paragraph-color);
-  margin-right: 11px;
-}
-#contact_details .details_icon:hover {
-  color: var(--first-primary-color);
-}
-
-/* ::::: MEDIA QUERIES START ::::: */
-
-@media (max-width: 1200px) and (min-width: 992px) {
-  #contact_details .follow_icon {
-    padding-top: 0;
-  }
-  #contact_details .globe_vist {
-    padding-bottom: 10px;
-  }
-}
-
-/* ::::: MEDIA QUERIES END ::::: */
-
-/* =================== CONTACT DETAILS END =================== */
-
-/* =================== CONTACT AREA START =================== */
-#contact_area {
-  padding: 0 0 100px 0;
-}
-#contact_area img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
-}
-#contact_area .fill_up {
-  margin-left: 14px;
-  padding: 30px 0;
-}
-#contact_area h3 {
-  padding-bottom: 22px;
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 128%;
-  color: var(--text-color);
-}
-#contact_area .form-group {
-  margin-bottom: 24px;
-}
-#contact_area .data {
-  font-family: var(--second-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 175%;
-  background-color: var(--bg);
-  border: none;
-  padding: 15px 20px;
-}
-#contact_area .data::placeholder {
-  font-family: var(--second-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 175%;
-  color: #828282;
-}
-#contact_area .btn_group {
-  display: inline-block;
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 167%;
-  text-align: center;
-  background-color: var(--first-primary-color);
-  color: var(--comon-colot);
-  padding: 16px 20px;
-  margin-top: 24px;
-  border: none;
-  position: relative;
-  z-index: 10;
-}
-#contact_area .btn_group::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: var(--black);
-  top: 0;
-  left: 0;
-  z-index: -1;
+.order-header {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
-  mask-size: 3000% 100%;
-  animation: cover_2 0.9s backwards steps(29);
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
-#contact_area .btn_group:hover::before {
-  animation: cover_1 0.9s forwards steps(29);
+.order-items table {
+  width: 100%;
 }
-@keyframes cover_1 {
-  0% {
-    mask-position: 0 0;
-  }
-  100% {
-    mask-position: 100% 0;
-  }
+.order-items th,
+td {
+  padding: 8px;
+  text-align: left;
 }
-@keyframes cover_2 {
-  0% {
-    mask-position: 100% 0;
-  }
-  100% {
-    mask-position: 0 0;
-  }
+.empty {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
 }
-
-/* ::::: MEDIA QUERIES START ::::: */
-
-@media (min-width: 992px) {
-  #contact_area img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-@media (max-width: 992px) {
-  #contact_area .row {
-    padding: 15px 0;
-  }
-}
-@media (max-width: 768px) {
-  #contact_area img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-@media (max-width: 480px) {
-  #contact_area img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-
-/* ::::: MEDIA QUERIES END ::::: */
-
-/* =================== CONTACT AREA END =================== */
+/* =================== ORDER HISTORY END =================== */
 
 /* =================== COMMON CONTACT START =================== */
 #common_contact {
